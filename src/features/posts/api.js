@@ -12,6 +12,6 @@ const posts = rootApi.injectEndpoints({
             providesTags: ['GET_POSTS'],
         })
     }),
-    overrideExisting:false
+    overrideExisting: false
 })
 export const {useGetPostsQuery} = posts;

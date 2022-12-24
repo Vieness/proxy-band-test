@@ -8,7 +8,6 @@ const users = rootApi.injectEndpoints({
                     url: 'users',
                     params: params
                 }
-
             },
             providesTags: ['GET_USERS'],
             keepUnusedDataFor: 60

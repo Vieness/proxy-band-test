@@ -13,6 +13,6 @@ const albums = rootApi.injectEndpoints({
             keepUnusedDataFor: 60
         })
     }),
-    overrideExisting:false
+    overrideExisting: false
 })
 export const {useGetAlbumsQuery} = albums;
