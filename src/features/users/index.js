@@ -1,11 +1,8 @@
-import {Box, Button, Card, CardActions, CardContent, Container, Modal, Typography} from "@mui/material";
+import {Button, Card, CardActions, CardContent, Container, Typography} from "@mui/material";
 import {useGetUsersQuery} from "./api";
 import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+import React from "react";
 import Albums from "../albums";
-
-import React from 'react';
-import {useGetAlbumsQuery} from "../albums/api";
 
 const Users = () => {
     const {data} = useGetUsersQuery();
@@ -13,6 +10,7 @@ const Users = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const navigate = useNavigate();
+    console.log(open)
     return (
         <div>
             {data?.map(item =>
@@ -31,8 +29,9 @@ const Users = () => {
                         </CardContent>
                         <CardActions>
                             <Button onClick={() => navigate(`posts?userId=${item.id}`)} size="small">User Posts</Button>
-                            <Button onClick={handleOpen} size="small">User Albums</Button>
-                            {open && <Albums open={open} close={handleClose}/>}
+                            <Button onClick={handleOpen} size="small">User
+                                Albums</Button>
+                            {open && <Albums open={open} handleClose={handleClose}/>}
                         </CardActions>
                     </Card>
                 </Container>

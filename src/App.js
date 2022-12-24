@@ -11,7 +11,6 @@ function App() {
             <Router>
                 <Routes>
                     <Route exact path={'/'} element={<Users/>}/>
-                    <Route path={'albums'} element={<Albums/>}/>
                     <Route path={'posts'} element={<Posts/>}/>
                 </Routes>
             </Router>

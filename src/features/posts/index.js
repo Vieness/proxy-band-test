@@ -1,15 +1,10 @@
 import {useGetPostsQuery} from "./api";
-import {
-    Avatar,
-    Card,
-    CardContent,
-    CardHeader,
-    Typography
-} from "@mui/material";
+import {Avatar, Card, CardContent, CardHeader, dialogActionsClasses, Typography} from "@mui/material";
+import {useSearchParams} from "react-router-dom";
 
 const Posts = () => {
-    const {data} = useGetPostsQuery();
-    // I thought about making an infinite scroll, but I wanted to quickly turn in the task
+    const [searchParams] = useSearchParams();
+    const {data} = useGetPostsQuery(searchParams.toString());
     return (
         <div>
             {data?.map(item =>
